@@ -6,7 +6,7 @@
 #
 # Creation Date : 11-09-2013
 #
-# Last Modified : Wed 11 Sep 2013 05:03:14 PM CDT
+# Last Modified : Wed 11 Sep 2013 05:08:41 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu) 
 #
@@ -62,8 +62,6 @@ for f_i in range(datacnt):
         m = int(value[2]) 
         if (trainyear, topic) not in logL_array:
             cnt += 1
-            if cnt > 2:
-                break 
             Train_Data, Data_weight = Ftr_Ext(year, data_folder, topic)
             logL_array[(trainyear, topic)] = np.zeros(16)
         
