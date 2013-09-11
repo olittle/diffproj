@@ -6,7 +6,7 @@
 #
 # Creation Date : 27-01-2013
 #
-# Last Modified : Tue 10 Sep 2013 12:58:06 PM CDT
+# Last Modified : Wed 11 Sep 2013 02:42:30 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -24,7 +24,7 @@ from Single_Beta import Single_Beta
 from C_Gen import C_Gen
 from Ftr_Ext import Ftr_Ext
 
-def Test(year, out_folder, Train_Data, Train_weight, topic):
+def Test(year, out_folder, Train_Data, Train_weight, topic, weight_fout):
     
     author_set = set() 
 
@@ -89,6 +89,7 @@ def Test(year, out_folder, Train_Data, Train_weight, topic):
     logL_arr = []
     Global_arr = []
     total = len(Data)
+    
 
     for m in range(len(method)):
 
@@ -113,6 +114,13 @@ def Test(year, out_folder, Train_Data, Train_weight, topic):
         if op == 1:
             single_weight = Update_Beta(Train_Data[:, path_set], Train_Data[:, 0][:, np.newaxis], len(field_array[m]), Train_weight)
             print method[m] , single_weight
+            weight_fout.write(str(year) + "\t" + str(topic))
+            weight_fout.write("\t" + str(m) + "\t" + method[m])
+            for xx in range(len(single_weight)):
+                weight_fout.write("\t" + str(single_weight[xx]))
+            weight_fout.write("\n") 
+
+        continue 
 
 
         for i in range(total):
@@ -219,7 +227,9 @@ def Test(year, out_folder, Train_Data, Train_weight, topic):
         Global_arr.append((float(expect) / float(ground_truth) + float(ground_truth) / float(expect) ) * 0.5 - 1)
 
 #        PR.close()
-    
+   
+    return 
+
     best_AICc = 1e20 
     best_m = 5 
     for m in range(len(method)):
