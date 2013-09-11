@@ -6,7 +6,7 @@
 #
 # Creation Date : 26-02-2013
 #
-# Last Modified : Tue 10 Sep 2013 05:13:27 PM CDT
+# Last Modified : Tue 10 Sep 2013 07:10:31 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -32,15 +32,14 @@ def Train(Data_1, year, out_folder, weight, position):
     Data[1] = Data_1[1][:, position]
     field = len(Data[0][0]) - 2
     
-    update = 1
+    update = 10
     Y = Data[0][:, 0][:, np.newaxis]
     weight = np.array(weight)
 #    beta = np.random.random(field)
     beta = np.ones(field)
-    beta = np.array([])
     
     cdef double smooth = 0
-    while update > 1e-3:
+    while update > 1e-4:
         pos_score_base = (Data[0][:, 2:] * beta ).sum(axis = 1)
         pos_score = Data[0][:, 2:] / (smooth + pos_score_base[:, np.newaxis])
 
@@ -55,6 +54,9 @@ def Train(Data_1, year, out_folder, weight, position):
 
         beta_new = (Update * beta) / total_score.sum(axis = 0)
 
-        update = abs(beta_new - beta).sum()
+        update = abs(beta_new - beta).sum() / beta.sum() 
+        
         beta = copy(beta_new)
     return beta
+
+

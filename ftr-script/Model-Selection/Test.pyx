@@ -6,7 +6,7 @@
 #
 # Creation Date : 27-01-2013
 #
-# Last Modified : Tue 10 Sep 2013 01:18:01 PM CDT
+# Last Modified : Tue 10 Sep 2013 07:05:38 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -72,7 +72,7 @@ def Test(Test_Data, Test_weight, year, out_folder, Train_Data, Train_weight, top
         print m, method[m], sub_beta
 
         weight_out.write(str(year - 1) + "\t" + str(topic) + "\t" + str(m) + "\t" + str(method[m]))
-        for i in range(len(sub_beta[i])):
+        for i in range(len(sub_beta)):
             weight_out.write("\t" + str(sub_beta[i]))
         weight_out.write("\n")
         

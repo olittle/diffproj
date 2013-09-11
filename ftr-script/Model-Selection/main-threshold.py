@@ -6,7 +6,7 @@
 #
 # Creation Date : 04-09-2013
 #
-# Last Modified : Tue 10 Sep 2013 01:17:49 PM CDT
+# Last Modified : Tue 10 Sep 2013 07:10:42 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -37,7 +37,7 @@ linetarget = int(sys.argv[1])
 
 for line in topicdata:
     lcnt += 1
-    if lcnt % 12 != linetarget:
+    if lcnt % 30 != linetarget:
         continue
 
     value = line.split("\n")[0].split()
