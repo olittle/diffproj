@@ -6,7 +6,7 @@
 #
 # Creation Date : 26-02-2013
 #
-# Last Modified : Tue 20 Aug 2013 02:59:32 AM CDT
+# Last Modified : Wed 11 Sep 2013 02:47:45 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -21,7 +21,6 @@ import math
 from copy import copy
 
 from scipy.sparse import lil_matrix
-from sklearn.linear_model import LogisticRegression
 
 from Update_Beta import Update_Beta
 
