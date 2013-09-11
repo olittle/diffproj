@@ -6,7 +6,7 @@
 #
 # Creation Date : 04-09-2013
 #
-# Last Modified : Tue 10 Sep 2013 07:42:21 PM CDT
+# Last Modified : Tue 10 Sep 2013 10:27:39 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu)
 #
@@ -126,4 +126,3 @@ result_out.close()
 weight_out.close()
 for i in fout:
     fout[i].close() 
-    
