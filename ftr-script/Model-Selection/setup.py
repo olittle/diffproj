@@ -6,7 +6,7 @@
 #
 # Creation Date : 25-10-2012
 #
-# Last Modified : Fri 30 Aug 2013 05:29:01 AM CDT
+# Last Modified : Wed 11 Sep 2013 04:36:00 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu) 
 #
@@ -39,6 +39,15 @@ setup(
 )
 
 ext_modules = [Extension("Train", ["Train.pyx"])]
+
+setup(
+	name = "Generate Positive and Negative Dataset with parameters",
+	cmdclass = {"build_ext":build_ext},
+	ext_modules = ext_modules
+)
+
+
+ext_modules = [Extension("logL_calc", ["logL_calc.pyx"])]
 
 setup(
 	name = "Generate Positive and Negative Dataset with parameters",

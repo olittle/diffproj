@@ -6,7 +6,7 @@
 #
 # Creation Date : 31-08-2013
 #
-# Last Modified : Sat 31 Aug 2013 10:27:43 PM CDT
+# Last Modified : Wed 11 Sep 2013 02:59:36 PM CDT
 #
 # Created By : Huan Gui (huangui2@illinois.edu) 
 #
@@ -16,23 +16,6 @@
 import numpy as np 
 from copy import copy 
 import math 
-
-#samplesize = {}
-#fout = open("../../sourcedata/sample_size", "w")
-#for year in range(1970, 2010):
-#    data = open("../../data/" + str(year - 1) + "/paper_author.txt")
-#    authors = set() 
-#    for line in data:
-#        value = int(line.split()[1])
-#        authors.add(value)
-#    
-#    samplesize[year] = len(authors)
-#        
-#for year in samplesize:
-#    fout.write(str(year) + "\t" + str(samplesize[year]) + "\n")
-#
-#fout.close()
-
 
 samplesize = {} 
 data = open("../../sourcedata/sample_size")
